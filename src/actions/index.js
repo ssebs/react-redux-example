@@ -1,9 +1,15 @@
-import { ADD_ARTICLE } from "../constants/action-types";
+import { ADD_ARTICLE, DEL_ARTICLE } from "../constants/action-types";
 
 export function addArticle(pl) {
-    console.log(pl);
     return {
         type: ADD_ARTICLE,
         payload: pl
     };
+}
+
+export function delArticle(pl) {
+    return {
+        type: DEL_ARTICLE,
+        id: pl
+    }
 }

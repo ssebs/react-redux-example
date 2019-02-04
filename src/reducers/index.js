@@ -1,4 +1,4 @@
-import { ADD_ARTICLE } from "../constants/action-types";
+import { ADD_ARTICLE, DEL_ARTICLE } from "../constants/action-types";
 
 const initialState = {
     articles: []
@@ -13,6 +13,8 @@ function rootReducer(state = initialState, action) {
                     articles: state.articles.concat(action.payload)
                 }
             );
+        case DEL_ARTICLE:
+            return {articles: [...state.articles].filter(art => art.id  !== action.id)};
         default:
             return state;
     }
